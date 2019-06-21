@@ -12,7 +12,7 @@ for subdir, dirs, files in os.walk(dir):
             with open(path, "r+", encoding="utf8") as file:
                 text = file.read()
                 count = text.count(";\n")
-                text = text.replace(";\n", "")
+                text = text.replace(";\n", "\n")
                 open(path, "w").close()
                 file.seek(0)
                 file.write(text)
