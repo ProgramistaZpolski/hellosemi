@@ -19,6 +19,18 @@ for subdir, dirs, files in os.walk(dir):
                 file.close()
             print(f"{count};\t{path}")
             total += count
+        if file.endswith(".py"):
+            path = os.path.join(subdir, file)
+            with open(path, "r+", encoding="utf8") as file:
+                text = file.read()
+                count = text.count(";\n")
+                text = text.replace("\n", ";\n")
+                open(path, "w").close()
+                file.seek(0)
+                file.write(text)
+                file.close()
+            print(f"{count};\t{path}")
+            total += count
             
 
 print("=" * 80)
