@@ -3,6 +3,7 @@ import os
 
 dir = sys.argv[1]
 total = 0
+print("Welcome to HelloSemi!")
 print(f"Scanning {dir}")
 
 for subdir, dirs, files in os.walk(dir):
@@ -36,3 +37,4 @@ for subdir, dirs, files in os.walk(dir):
 print("=" * 80)
 print(f"Total ; in {dir}: {total}")
 print("=" * 80)
+print("Done! :D")
